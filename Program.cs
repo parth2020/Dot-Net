@@ -3,30 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PrimeNumber
+namespace calc
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int i,n,m,flag=0;
-            Console.WriteLine("Enter Number");
-            n = Convert.ToInt16(Console.ReadLine());
-            m = n / 2;
-            for (i = 2; i <= m; i++)
-            {
-                if (n % i == 0)
-                {
-                    flag = 1;
+            int a, b;
+            float res;
+            char c;
+            Console.WriteLine("Enter Value of a");
+            a = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Enter Value of b");
+            b = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Enter Choice");
+            Console.WriteLine("+ For Addition");
+            Console.WriteLine("- For Substraction");
+            Console.WriteLine("* For Multiplication");
+            Console.WriteLine("/ For Division");
+
+            c = Convert.ToChar(Console.ReadLine());
+
+            switch (c) {
+                case '+':
+                    res=a+b;
+                    Console.WriteLine("Result is:" + res);
                     break;
-                }
+                case '-':
+                    res = a - b;
+                    Console.WriteLine("Result is:" + res);
+                    break;
+                case '*':
+                    res = a * b;
+                    Console.WriteLine("Result is:" + res);
+                    break;
+                case '/':
+                    res = a / b;
+                    Console.WriteLine("Result is:" + res);
+                    break;
+                default:
+                    break;
+
 
             }
-            if (flag == 1)
-                Console.WriteLine("Not Prime");
-            else
-                Console.WriteLine("Number is Prime");
-
+            
             Console.ReadKey();
         }
     }
